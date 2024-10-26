@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Examen de Preguntas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div>
+    <h1>Examen de Preguntas</h1>
+    <form method="POST">
+        {% for i, pregunta in enumerate(preguntas) %}
+        <div class="question">
+            <h2>{{ pregunta[0] }}</h2>
+            <input type="text" name="pregunta_{{ i }}" required />
+        </div>
+        {% endfor %}
+        <button type="submit">Responder</button>
+    </form>
+    </div>
+</body>
+</html>

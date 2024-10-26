@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Resultados del Examen</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div>
+    <h1>Resultados</h1>
+    <h2>Tuviste {{ puntaje }} de {{ total_preguntas }}.</h2>
+    {% if puntaje == total_preguntas %}
+        <h2>¡Felicidades! Has acertado todas las preguntas.</h2>
+    {% endif %}
+    <a href="/">Volver a iniciar</a>
+    </div>
+</body>
+</html>
